@@ -2,7 +2,7 @@ import os
 import platform
 
 class project_folder_making:
-    
+
     # Setting up project folder
     @staticmethod
     def project_path():
@@ -58,7 +58,6 @@ class project_folder_making:
             os.system("touch " + folder_name + "/base.py")
             os.system("chmod a+x " + folder_name + "/base.py")
             project_folder_making().opening_things(folder_name)
-            # os.system("source " + folder_name + "/venv/bin/active") # not working properly, because it is not possible
 
     # Setting up the C# project whether it's a Wpf app or a Console app 
     @staticmethod
