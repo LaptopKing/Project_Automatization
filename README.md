@@ -2,7 +2,7 @@
 A python script is making the project folders and virtual environments and all the things that you need for your project in a specific programming language! It also sets up all the needed files so you don't have to worry about them. 
 
 ## Need to do / have things
-For this to work properly, you will need VS Code, Python3 (Any python3 will do as far as I know) and basically that's it, if you have any problem with it, please warn me about that, so I can fix that and expand this so it won't have problems later!
+For this to work properly, you will need VS Code, Python3 (Any python3 will do as far as I know) and Flutter all set up with Android Studio and it's things (this is only required if you choose flutter as your project, it will have all the files you need but it won't work properly and you won't be able to test your App) and basically that's it, if you have any problem with it, please warn me about that, so I can fix that and expand this so it won't have problems later!
 
 ## Plans
 The script is mainly optimized for just Linux yet, It was not tested on Windows yet, might be a Windows version in the future.
