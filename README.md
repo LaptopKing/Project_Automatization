@@ -12,4 +12,6 @@ Later on, hopefully the script will get a more usable version by simplifying eve
 # Download / Clone the repository
 
 To clone the github repository use:
-git clone
+```html
+git clone https://github.com/LaptopKing/Project_Automatization.git
+```
