@@ -2,6 +2,7 @@ import os
 import platform
 
 class project_folder_making:
+    
     # Setting up project folder
     @staticmethod
     def project_path():
@@ -16,6 +17,13 @@ class project_folder_making:
                 path = input("\nEnter the path for your 'Programs' folder and the name of the 'Project Folder': ")
         
         return path
+
+    # Opening up the terminal, file manager and VS Code with the given path
+    @staticmethod
+    def opening_things(folder_name):
+        os.system("gnome-terminal --working-directory=" + folder_name)
+        os.system("gnome-open " + folder_name)
+        os.system("code " + folder_name)
 
 
     # Choosing the project type and environment
@@ -43,14 +51,13 @@ class project_folder_making:
             os.system("python3 -m venv " + folder_name + "/venv")
             os.system("touch " + folder_name + "/base.py")
             os.system("chmod a+x " + folder_name + "/base.py")
-            os.system("gnome-terminal --working-directory=" + folder_name)
-            os.system("gnome-open " + folder_name)
+            project_folder_making().opening_things(folder_name)
+
         else:
             os.system("virtualenv " + folder_name + "/venv")
             os.system("touch " + folder_name + "/base.py")
             os.system("chmod a+x " + folder_name + "/base.py")
-            os.system("gnome-terminal --working-directory=" + folder_name)
-            os.system("gnome-open " + folder_name)
+            project_folder_making().opening_things(folder_name)
             # os.system("source " + folder_name + "/venv/bin/active") # not working properly, because it is not possible
 
     # Setting up the C# project whether it's a Wpf app or a Console app 
@@ -61,20 +68,18 @@ class project_folder_making:
 
         if (c_sharp_type == "c"):
             os.system("rsync -avz ./C#/Console/ " + folder_name)
-            os.system("gnome-terminal --working-directory=" + folder_name)
-            os.system("gnome-open " + folder_name)
+            project_folder_making().opening_things(folder_name)
+
         elif (c_sharp_type == "wpf"):
             os.system("rsync -avz ./C#/Wpf/ " + folder_name)
-            os.system("gnome-terminal --working-directory=" + folder_name)
-            os.system("gnome-open " + folder_name)
+            project_folder_making().opening_things(folder_name)
 
     # Setting up Front-End Web Dev project a.k.a HTML, CSS, Javascript
     @staticmethod
     def web():
         folder_name = project_folder_making().project_path()
         os.system("rsync -avz ./Web_Dev/ " + folder_name)
-        os.system("gnome-terminal --working-directory=" + folder_name)
-        os.system("gnome-open " + folder_name)
+        project_folder_making().opening_things(folder_name)
 
     # Setting up Flutter (Android) project
     @staticmethod
@@ -83,8 +88,7 @@ class project_folder_making:
         os.system("rsync -avz ./Flutter/ " + folder_name)
         os.system("cd " + folder_name + "/")
         os.system("flutter pub get")
-        os.system("gnome-terminal --working-directory=" + folder_name)
-        os.system("gnome-open " + folder_name)
+        project_folder_making().opening_things(folder_name)
 
 
 folder = project_folder_making()
