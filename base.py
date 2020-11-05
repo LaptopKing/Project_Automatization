@@ -61,6 +61,7 @@ class project_folder_making:
             os.system("rsync -avz ./C#/Wpf/ " + folder_name)
 
     # Setting up Front-End Web Dev project a.k.a HTML, CSS, Javascript
+    @staticmethod
     def web():
         folder_name = project_folder_making().project_path()
         os.system("rsync -avz ./Web_Dev/ " + folder_name)
