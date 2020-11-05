@@ -1,4 +1,4 @@
-# inspiration_image_app
+# Flutter Project
 
 A new Flutter project.
 
