@@ -6,15 +6,9 @@ class project_folder_making:
     # Setting up project folder
     @staticmethod
     def project_path():
-        path = input("\nEnter the path for your 'Programs' folder and the name of the 'Project Folder': ")
-        decision = False
-        while (decision != True):
-            try:
-                os.system("mkdir " + path)
-                decision = True
-            except:
-                print("\nNOT correct PATH, Enter it again: ")
-                path = input("\nEnter the path for your 'Programs' folder and the name of the 'Project Folder': ")
+        path = input("\nEnter the path for your 'Programs' folder and the name of the 'Project Folder'\
+            \n[Full path needed and a new folder name where all your files are going]\
+            \n[For example: /home/username/path/to/go/new_folder_name]: ")
         
         return path
 
@@ -86,7 +80,6 @@ class project_folder_making:
         folder_name = project_folder_making().project_path()
         os.system("rsync -avz ./Flutter/ " + folder_name)
         os.system("cd " + folder_name + "/")
-        os.system("flutter pub get")
         project_folder_making().opening_things(folder_name)
 
 
