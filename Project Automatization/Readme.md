@@ -9,12 +9,12 @@ To run the 'base.py' file in a virtual environment extract the 'venv.zip' file a
 To set up this, it can be a little more complicated than the above one, but it will be easier to use later on for sure! 
 
 Follow these steps:
-    - In the linux terminal enter:
+- In the linux terminal enter:
         ```html
         nano ~/.bashrc
         ```
         > After you ran this code you should see a text editor in your terminal! Now scroll all the way down and paste the code belove!
-    - The following step goes as this:
+- The following step goes as this:
         ```html
         # Custom aliases
         alias make_project='cd ~; ./Programming\ Projects/Project_Automatization/Project\ Automatization/Run.sh; cd -'
