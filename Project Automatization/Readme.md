@@ -20,9 +20,6 @@ Follow these steps:
         
         # Custom aliases
         
-        ```
-        ```
-        
         alias make_project='cd ~; ./Programming\ Projects/Project_Automatization/Project\ Automatization/Run.sh; cd -'
         
         ```
