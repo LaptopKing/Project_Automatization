@@ -23,7 +23,7 @@ class project_folder_making:
     # Choosing the project type and environment
     @staticmethod
     def project_type():
-        p_type = input("Enter the programming language you'll use!\n[p = python3, c# = C#, web = web development (full frontend setup), f = flutter]: ")
+        p_type = input("\nEnter the programming language you'll use!\n[p = python3, c# = C#, web = web development (full frontend setup), f = flutter]: ")
         if (p_type == "p"):
             project_folder_making().python()
         elif (p_type == "c#"):
