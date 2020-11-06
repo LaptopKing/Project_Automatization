@@ -17,6 +17,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ## To do list after choosing flutter project in the Terminal
 After you have chosen flutter as your project, you may got an error that you have no idea why is occurring, but it can be solved pretty simple. You have to enter one simple command to the terminal:
-```html
+```
 flutter pub get
 ```
