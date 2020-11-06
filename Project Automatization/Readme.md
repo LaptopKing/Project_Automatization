@@ -15,6 +15,7 @@ Follow these steps:
         ```
 >   After you ran this code you should see a text editor in your terminal! Now scroll all the way down and paste the code belove!
 - The following step goes as this:
+
         ```
         
         # Custom aliases
