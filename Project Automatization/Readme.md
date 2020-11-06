@@ -13,10 +13,10 @@ Follow these steps:
         ```html
         nano ~/.bashrc
         ```
-> After you ran this code you should see a text editor in your terminal! Now scroll all the way down and paste the code belove!
+>       After you ran this code you should see a text editor in your terminal! Now scroll all the way down and paste the code belove!
 - The following step goes as this:
         ```html
         # Custom aliases
         alias make_project='cd ~; ./Programming\ Projects/Project_Automatization/Project\ Automatization/Run.sh; cd -'
         ```
-> Note that the above commands are only for to make it more easy to use, after you completed these steps you will only need to type 'make_project' and the whole program will start automaticly and will guide you further to create your amazing project!
+>       Note that the above commands are only for to make it more easy to use, after you completed these steps you will only need to type 'make_project' and the whole program will start automaticly and will guide you further to create your amazing project!
