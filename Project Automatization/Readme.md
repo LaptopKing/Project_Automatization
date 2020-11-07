@@ -19,6 +19,10 @@ nano ~/.bashrc
 
 ```     
 # Custom aliases
-alias make_project='cd ~; ./Programming\ Projects/Project_Automatization/Project\ Automatization/Run.sh; cd -'     
+alias make_project='var1=$(locate Sajt.sh); cd "$var1"; ./Sajt.sh; cd -'
 ```
 >   Note that the above commands are only for to make it more easy to use, after you completed these steps you will only need to type 'make_project' and the whole program will start automaticly and will guide you further to create your amazing project!
+
+- ### Requirements for the 'Easier run'
+
+- To be able to make this work, you shouldn't have 'sajt.py' or 'Sajt.sh' named files, because the '.sh' script and the command in the '.bashrc' script are both detecting these files and to be able to create the alias for easier use, it must detect these two files so then it will set it up. Later on you might not want to create files named 'sajt.py' or 'Sajt.sh'.
