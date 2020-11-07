@@ -8,13 +8,13 @@ class project_folder_making:
     def project_path():
         path = input("\nEnter the path for your 'Programs' folder and the name of the 'Project Folder'\
             \n[Full path needed and a new folder name where all your files are going]\
-            \n[For example: /home/username/path/to/go/new_folder_name]: ")
+            \n[For example: /home/username/path/to/go/new_folder_name]\n: ")
         
         return path
 
     # Opening up the terminal, file manager and VS Code with the given path
     @staticmethod
-    def opening_things(folder_name):
+    def opening_system(folder_name):
         os.system("gnome-terminal --working-directory=" + folder_name)
         os.system("gnome-open " + folder_name)
         os.system("code " + folder_name)
@@ -45,13 +45,13 @@ class project_folder_making:
             os.system("python3 -m venv " + folder_name + "/venv")
             os.system("touch " + folder_name + "/base.py")
             os.system("chmod a+x " + folder_name + "/base.py")
-            project_folder_making().opening_things(folder_name)
+            project_folder_making().opening_system(folder_name)
 
         else:
             os.system("virtualenv " + folder_name + "/venv")
             os.system("touch " + folder_name + "/base.py")
             os.system("chmod a+x " + folder_name + "/base.py")
-            project_folder_making().opening_things(folder_name)
+            project_folder_making().opening_system(folder_name)
 
     # Setting up the C# project whether it's a Wpf app or a Console app 
     @staticmethod
@@ -61,26 +61,25 @@ class project_folder_making:
 
         if (c_sharp_type == "c"):
             os.system("rsync -avz ./C#/Console/ " + folder_name)
-            project_folder_making().opening_things(folder_name)
+            project_folder_making().opening_system(folder_name)
 
         elif (c_sharp_type == "wpf"):
             os.system("rsync -avz ./C#/Wpf/ " + folder_name)
-            project_folder_making().opening_things(folder_name)
+            project_folder_making().opening_system(folder_name)
 
     # Setting up Front-End Web Dev project a.k.a HTML, CSS, Javascript
     @staticmethod
     def web():
         folder_name = project_folder_making().project_path()
         os.system("rsync -avz ./Web_Dev/ " + folder_name)
-        project_folder_making().opening_things(folder_name)
+        project_folder_making().opening_system(folder_name)
 
     # Setting up Flutter (Android) project
     @staticmethod
     def flutter():
         folder_name = project_folder_making().project_path()
-        os.system("rsync -avz ./Flutter/ " + folder_name)
-        os.system("cd " + folder_name + "/")
-        project_folder_making().opening_things(folder_name)
+        os.system("flutter create " + folder_name)
+        project_folder_making().opening_system(folder_name)
 
 
 folder = project_folder_making()
