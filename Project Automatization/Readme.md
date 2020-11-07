@@ -10,9 +10,10 @@ To set up this, it can be a little more complicated than the above one, but it w
 
 Follow these steps:
 - In the linux terminal enter:
-        ```
-        nano ~/.bashrc
-        ```
+
+```
+nano ~/.bashrc
+```
 >   After you ran this code you should see a text editor in your terminal! Now scroll all the way down and paste the code belove!
 - The following step goes as this:
 
