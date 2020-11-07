@@ -10,6 +10,8 @@ class project_folder_making:
             \n[Full path needed and a new folder name where all your files are going]\
             \n[For example: /home/username/path/to/go/new_folder_name]\n: ")
         
+        os.mkdir(path)
+
         return path
 
     # Opening up the terminal, file manager and VS Code with the given path
@@ -60,12 +62,12 @@ class project_folder_making:
         c_sharp_type = input("Choose between console and GUI project [c = console, wpf = GUI]: ")
 
         if (c_sharp_type == "c"):
-            os.system("cd " + folder_name)
+            os.chdir(folder_name)
             os.system("dotnet new console")
             project_folder_making().opening_system(folder_name)
 
         elif (c_sharp_type == "wpf"):
-            os.system("cd " + folder_name)
+            os.chdir(folder_name)
             os.system("dotnet new wpf")
             project_folder_making().opening_system(folder_name)
 
