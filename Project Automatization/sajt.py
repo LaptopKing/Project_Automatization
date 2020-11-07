@@ -62,14 +62,20 @@ class project_folder_making:
         c_sharp_type = input("Choose between console and GUI project [c = console, wpf = GUI]: ")
 
         if (c_sharp_type == "c"):
-            os.chdir(folder_name)
-            os.system("dotnet new console")
-            project_folder_making().opening_system(folder_name)
+            try:
+                os.chdir(folder_name)
+                os.system("dotnet new console")
+                project_folder_making().opening_system(folder_name)
+            except:
+                print("\nBefore using flutter, you should set it up by the guide given in the 'README.md' in the base folder of 'Project_Automatization'")
 
         elif (c_sharp_type == "wpf"):
-            os.chdir(folder_name)
-            os.system("dotnet new wpf")
-            project_folder_making().opening_system(folder_name)
+            try:
+                os.chdir(folder_name)
+                os.system("dotnet new wpf")
+                project_folder_making().opening_system(folder_name)
+            except:
+                print("\nBefore using flutter, you should set it up by the guide given in the 'README.md' in the base folder of 'Project_Automatization'")
 
     # Setting up Front-End Web Dev project a.k.a HTML, CSS, Javascript
     @staticmethod
