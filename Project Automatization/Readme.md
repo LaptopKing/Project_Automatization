@@ -25,4 +25,4 @@ alias make_project='var1=$(locate Sajt.sh); cd "$var1"; ./Sajt.sh; cd -'
 
 - # Requirements for the 'Easier run'
 
-        To be able to make this work, you shouldn't have 'sajt.py' or 'Sajt.sh' named files, because the '.sh' script and the command in the '.bashrc' script are both detecting these files and to be able to create the alias for easier use, it must detect these two files so then it will set it up. Later on you might not want to create files named 'sajt.py' or 'Sajt.sh'.
+> To be able to make this work, you shouldn't have 'sajt.py' or 'Sajt.sh' named files, because the '.sh' script and the command in the '.bashrc' script are both detecting these files and to be able to create the alias for easier use, it must detect these two files so then it will set it up. Later on you might not want to create files named 'sajt.py' or 'Sajt.sh'.
