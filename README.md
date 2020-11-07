@@ -8,9 +8,9 @@ A python script is making the project folders and virtual environments and all t
 
 - Python3:
 
-	Installation Guide:
+		Installation Guide:
 
-	[Set up Guide for Python3 on linux](https://realpython.com/installing-python/)
+		[Set up Guide for Python3 on linux](https://realpython.com/installing-python/)
 
 - Flutter:
 	
