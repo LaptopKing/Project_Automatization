@@ -6,20 +6,20 @@ A python script is making the project folders and virtual environments and all t
 
 - Flutter:
 	
-[Set up Guide for linux](https://flutter.dev/docs/get-started/install/linux)
+	[Set up Guide for linux](https://flutter.dev/docs/get-started/install/linux)
 	
 	Above you can see the installation guide for flutter on linux!
 
 	Below you can see the set up guide for editors to use with flutter!
 	
-[Set up Guide for editor](https://flutter.dev/docs/get-started/editor?tab=vscode)
+	[Set up Guide for editor](https://flutter.dev/docs/get-started/editor?tab=vscode)
 	
 
 
 - You also need to setup .Net to be able to set up C# for programming. For that you can use the guide Microsoft already made for you. The guide linked down below is for Debian based Distributions.
-```
-[Set up Guide for C# on linux (Debian)](https://docs.microsoft.com/hu-hu/dotnet/core/install/linux-debian)
-```
+
+	[Set up Guide for C# on linux (Debian)](https://docs.microsoft.com/hu-hu/dotnet/core/install/linux-debian)
+
 
 ## Plans
 The script is mainly optimized for just Linux yet, It was not tested on Windows yet, might be a Windows version in the future.
