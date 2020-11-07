@@ -81,9 +81,12 @@ class project_folder_making:
     # Setting up Flutter (Android) project
     @staticmethod
     def flutter():
-        folder_name = project_folder_making().project_path()
-        os.system("flutter create " + folder_name)
-        project_folder_making().opening_system(folder_name)
+        try:
+            folder_name = project_folder_making().project_path()
+            os.system("flutter create " + folder_name)
+            project_folder_making().opening_system(folder_name)
+        except:
+            print("\nBefore using flutter, you should set it up by the guide given in the 'README.md' in the base folder of 'Project_Automatization'")
 
 
 folder = project_folder_making()
