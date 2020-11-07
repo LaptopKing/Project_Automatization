@@ -6,13 +6,13 @@ A python script is making the project folders and virtual environments and all t
 
 - Flutter:
 	```
-	[Link](https://flutter.dev/docs/get-started/install/linux)
+[Link](https://flutter.dev/docs/get-started/install/linux)
 	```
 	Above you can see the installation guide for flutter on linux!
 
 	Below you can see the set up guide for editors to use with flutter!
 	```
-	[Link](https://flutter.dev/docs/get-started/editor?tab=vscode)
+[Link](https://flutter.dev/docs/get-started/editor?tab=vscode)
 	```
 
 
