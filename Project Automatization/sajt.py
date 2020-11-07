@@ -60,11 +60,13 @@ class project_folder_making:
         c_sharp_type = input("Choose between console and GUI project [c = console, wpf = GUI]: ")
 
         if (c_sharp_type == "c"):
-            os.system("rsync -avz ./C#/Console/ " + folder_name)
+            os.system("cd " + folder_name)
+            os.system("dotnet new console")
             project_folder_making().opening_system(folder_name)
 
         elif (c_sharp_type == "wpf"):
-            os.system("rsync -avz ./C#/Wpf/ " + folder_name)
+            os.system("cd " + folder_name)
+            os.system("dotnet new wpf")
             project_folder_making().opening_system(folder_name)
 
     # Setting up Front-End Web Dev project a.k.a HTML, CSS, Javascript
