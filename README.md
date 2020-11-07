@@ -17,9 +17,9 @@ A python script is making the project folders and virtual environments and all t
 
 
 - You also need to setup .Net to be able to set up C# for programming. For that you can use the guide Microsoft already made for you. The guide linked down below is for Debian based Distributions.
-	```
-	https://docs.microsoft.com/hu-hu/dotnet/core/install/linux-debian
-	```
+```
+[Set up Guide for C# on linux (Debian)](https://docs.microsoft.com/hu-hu/dotnet/core/install/linux-debian)
+```
 
 ## Plans
 The script is mainly optimized for just Linux yet, It was not tested on Windows yet, might be a Windows version in the future.
