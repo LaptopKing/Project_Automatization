@@ -2,6 +2,7 @@ import os
 import platform
 import pip
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 class project_folder_making:
@@ -113,7 +114,7 @@ class GitHub_and_Setup():
     # Open google and create new repository in GitHub
     @staticmethod
     def web():
-        GitHub_and_Setup().pip()
+        variables = GitHub_and_Setup().git_hub()
         username_slash_email = input("\nEnter your username or email address: ")
         password = input("Enter your password: ")
         driver = webdriver.Opera(executable_path='./operadriver')
@@ -123,11 +124,34 @@ class GitHub_and_Setup():
         driver.find_element_by_xpath('//*[@id="login"]/form/div[4]/input[12]').click()
         sleep(0.5)
         driver.find_element_by_xpath('//*[@id="repos-container"]/h2/a').click()
+        driver.find_element_by_xpath('//*[@id="repository_name"]').send_keys(variables[3])
+        if (variables[4] == ""):
+            pass
+        else:
+            driver.find_element_by_xpath('//*[@id="repository_description"]').send_keys(variables[4])
+        
+        if (variables[0] == False):
+            driver.find_element_by_xpath('//*[@id="repository_visibility_private"]').click()
+        else:
+            pass
+
+        if (variables[1] == True):
+            driver.find_element_by_xpath('//*[@id="repository_auto_init"]').click()
+        else:
+            pass
+
+        if (variables[2] == True):
+            driver.find_element_by_xpath('//*[@id="repository_gitignore_template_toggle"]').click() 
+        else:
+            pass
+
+        sleep(5)
 
 
     # Github repository set up.
     @staticmethod
     def git_hub():
+        GitHub_and_Setup().pip()
         pub_priv = True
         readme = False
         gitignore = False
@@ -138,16 +162,19 @@ class GitHub_and_Setup():
             pub_priv = False
         else:
             pub_priv = True
+            pass
 
         if (input("Add README file by typing 'add': ") == "add"):
             readme = True
         else:
             readme = False
+            pass
 
         if (input("Add .gitignore file by typing 'add': ") == "add"):
             gitignore = True
         else:
             gitignore = False
+            pass
         
         return pub_priv, readme, gitignore, repos_name, description
 
@@ -158,4 +185,4 @@ folder = project_folder_making()
 
 git = GitHub_and_Setup()
 
-git.git_hub()
+git.web()
