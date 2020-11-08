@@ -3,12 +3,6 @@ import platform
 import pip
 from selenium import webdriver
 
-driver = webdriver.Opera(executable_path="operadriver")
-driver.get("www.google.com")
-
-installed_packages = pip.get_installed_distributions()
-flat_installed_packages = [package.project_name for package in installed_packages]
-
 class project_folder_making:
 
     # Setting up project folder
@@ -42,10 +36,6 @@ class project_folder_making:
             project_folder_making().web()
         elif (p_type == "f"):
             project_folder_making().flutter()
-
-    # Github repository set up.
-    @staticmethod
-    def git_hub():
 
 
     # Setting up the python3 virtual environment in the project folder
@@ -107,6 +97,38 @@ class project_folder_making:
             print("\nBefore using flutter, you should set it up by the guide given in the 'README.md' in the base folder of 'Project_Automatization'")
 
 
+class GitHub_and_Setup():
+    # Check for pip packages and install them
+    @staticmethod
+    def pip():
+        path = os.popen("locate sajt.py").readline()
+        path = path[:-8]
+        print("\nEnter your password to update your system and install the required packages:")
+        os.system("sudo apt update")
+        os.system("sudo apt install python3-pip")
+        os.system("pip3 install selenium")
+    
+    # Open google and create new repository in GitHub
+    @staticmethod
+    def web():
+        username_slash_email = input("\nEnter your username or email address: ")
+        password = input("Enter your password: ")
+        driver = webdriver.Opera(executable_path='./operadriver')
+        driver.get("https://github.com/login")
+        driver.get_element_by_xpath('//*[@id="login_field"]').send_keys(username_slash_email)
+        driver.get_element_by_xpath('//*[@id="password"]').send_keys(password)
+        driver.get_element_by_xpath('//*[@id="login"]/form/div[4]/input[12]').click()
+
+
+    # Github repository set up.
+    @staticmethod
+    def git_hub():
+        pass
+
 folder = project_folder_making()
 
-folder.project_type()
+# folder.project_type()
+
+git = GitHub_and_Setup()
+
+git.pip()
