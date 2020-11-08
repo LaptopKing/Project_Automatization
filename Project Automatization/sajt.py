@@ -1,5 +1,13 @@
 import os
 import platform
+import pip
+from selenium import webdriver
+
+driver = webdriver.Opera(executable_path="operadriver")
+driver.get("www.google.com")
+
+installed_packages = pip.get_installed_distributions()
+flat_installed_packages = [package.project_name for package in installed_packages]
 
 class project_folder_making:
 
@@ -34,6 +42,10 @@ class project_folder_making:
             project_folder_making().web()
         elif (p_type == "f"):
             project_folder_making().flutter()
+
+    # Github repository set up.
+    @staticmethod
+    def git_hub():
 
 
     # Setting up the python3 virtual environment in the project folder
