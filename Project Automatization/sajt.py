@@ -133,13 +133,14 @@ class GitHub_and_Setup():
         if (variables[0] == False):
             driver.find_element_by_xpath('//*[@id="repository_visibility_private"]').click()
 
+        """
         if (variables[1] == True):
-            
             f = open ("./README.md", "w")
             f.write("# " + variables[3])
             f.write("\n")
             f.write(variables[4])
-
+        """
+        
         sleep(5)
 
 
