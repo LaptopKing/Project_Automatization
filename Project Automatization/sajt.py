@@ -132,18 +132,13 @@ class GitHub_and_Setup():
         
         if (variables[0] == False):
             driver.find_element_by_xpath('//*[@id="repository_visibility_private"]').click()
-        else:
-            pass
 
         if (variables[1] == True):
-            driver.find_element_by_xpath('//*[@id="repository_auto_init"]').click()
-        else:
-            pass
-
-        if (variables[2] == True):
-            driver.find_element_by_xpath('//*[@id="repository_gitignore_template_toggle"]').click() 
-        else:
-            pass
+            
+            f = open ("./README.md", "w")
+            f.write("# " + variables[3])
+            f.write("\n")
+            f.write(variables[4])
 
         sleep(5)
 
@@ -155,7 +150,6 @@ class GitHub_and_Setup():
         pub_priv = True
         readme = False
         gitignore = False
-        # git_license = False
         repos_name = input("Enter your repository name: ")
         description = input("Add a description (optional)\n: ")
         if (input("Select repository type [pub = Public, priv = Private]: ") == "priv"):
