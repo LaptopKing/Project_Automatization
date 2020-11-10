@@ -211,6 +211,9 @@ git = GitHub_and_Setup()
 # git.web()
 
 asd = os.popen('locate operadriver').readlines()
+word = ""
+
 for f in asd:
-    # "/Project_Automatization/Project\ Automatization/"
+    for i in range(f):
+        
     print(f)
