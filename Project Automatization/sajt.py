@@ -39,6 +39,8 @@ class project_folder_making:
         elif (p_type == "f"):
             project_folder_making().flutter()
 
+        return p_type
+
 
     # Setting up the python3 virtual environment in the project folder
     @staticmethod
@@ -114,17 +116,22 @@ class GitHub_and_Setup():
     # Open google and create new repository in GitHub
     @staticmethod
     def web():
+        p_type = project_folder_making().project_type()
+        driver_path = os.popen("find Project\ Automatization").readline()
         variables = GitHub_and_Setup().git_hub()
         username_slash_email = input("\nEnter your username or email address: ")
         password = input("Enter your password: ")
-        driver = webdriver.Opera(executable_path='./operadriver')
+        driver = webdriver.Opera(executable_path=driver_path)
         driver.get("https://github.com/login")
         driver.find_element_by_xpath('//*[@id="login_field"]').send_keys(username_slash_email)
         driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
         driver.find_element_by_xpath('//*[@id="login"]/form/div[4]/input[12]').click()
+
         sleep(0.5)
+
         driver.find_element_by_xpath('//*[@id="repos-container"]/h2/a').click()
         driver.find_element_by_xpath('//*[@id="repository_name"]').send_keys(variables[3])
+        
         if (variables[4] == ""):
             pass
         else:
@@ -133,13 +140,34 @@ class GitHub_and_Setup():
         if (variables[0] == False):
             driver.find_element_by_xpath('//*[@id="repository_visibility_private"]').click()
 
-        """
+        element = driver.find_element_by_xpath('//*[@id="new_repository"]/div[4]/button')
+        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+        sleep(1)
+
+        driver.find_element_by_xpath('//*[@id="new_repository"]/div[4]/button').send_keys(Keys.ENTER)
+
+        sleep(5)
+
+        element = driver.find_element_by_xpath('//*[@id="empty-setup-new-repo-echo"]')
+        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        os.system(element)
+
+        sleep(5)
+
+
+
         if (variables[1] == True):
             f = open ("./README.md", "w")
             f.write("# " + variables[3])
             f.write("\n")
             f.write(variables[4])
-        """
+            f.flush()
+            f.close()
+        
+        # if (variables[2] == True):
+            
+        
         
         sleep(5)
 
@@ -180,4 +208,9 @@ folder = project_folder_making()
 
 git = GitHub_and_Setup()
 
-git.web()
+# git.web()
+
+asd = os.popen('locate operadriver').readlines()
+for f in asd:
+    # "/Project_Automatization/Project\ Automatization/"
+    print(f)
