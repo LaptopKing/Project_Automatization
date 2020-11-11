@@ -102,17 +102,17 @@ class project_folder_making:
 
 
 class GitHub_and_Setup():
-    # Check for pip packages and install them
+    # Updating pip, the system and downloading necessary packages
     @staticmethod
     def pip():
-        path = os.popen("locate sajt.py").readline()
-        path = path[:-8]
         print("\nEnter your password to update your system and install the required packages:")
         os.system("sudo apt update")
-        os.system("sudo apt install python3-pip")
+        os.system("sudo apt install python3 -y")
+        os.system("sudo apt install python3.7 -y")
+        os.system("sudo apt install python3-pip -y")
         os.system("pip3 install selenium")
-        os.system("clear")
-    
+
+
     # Open google and create new repository in GitHub
     @staticmethod
     def web():
