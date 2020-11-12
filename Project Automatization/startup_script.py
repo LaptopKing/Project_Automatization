@@ -14,9 +14,12 @@ alias = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.s
 for g in range(len(bash_array)):
     if (bash_array[g] != "# Custom aliases" and g >= minus_length):
         bash_array.append("\n# Custom aliases")
+        g = 0
     elif (bash_array[g] != alias and g >= minus_length):
         bash_array.append("\n" + alias)
-
+    else:
+        pass
+    
     print(bash_array[g])
 
 new_string = ""
