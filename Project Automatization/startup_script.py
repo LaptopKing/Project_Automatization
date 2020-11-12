@@ -19,13 +19,14 @@ for g in range(len(bash_array)):
         bash_array.append("\n" + alias)
     else:
         pass
-    
+
     print(bash_array[g])
 
 new_string = ""
 for lines in bash_array:
     new_string = lines
 print(new_string)
+print(alias)
 """
 bash_new = open(os.path.expanduser("~/.bashrc"), "w")
 bash_new.write(new_string)
