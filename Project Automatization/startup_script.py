@@ -1,13 +1,12 @@
 import os
-print("Hello World")
 
 with open(os.path.expanduser("~/.bashrc"), "r") as f:
     name = f.read()
     bash_array = name.splitlines()
 
-print(bash_array)
-print(len(bash_array))
-"""
+# print(bash_array)
+# print(len(bash_array))
+
 g = 0
 minus_length = len(bash_array) - 2
 
@@ -19,7 +18,7 @@ for g in range(len(bash_array)):
         bash_array.append("\n" + alias)
 
     print(bash_array[g])
-
+"""
 new_string = ""
 for lines in bash_array:
     new_string = lines
