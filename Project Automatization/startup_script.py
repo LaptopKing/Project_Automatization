@@ -20,8 +20,8 @@ for lines in bash_array:
     new_string += "\n" + lines
 
 
-print(new_string)
-new_string = new_string + "\n" + alias
+# print(new_string)
+new_string += "\n" + alias
 
 print(new_string)
 
