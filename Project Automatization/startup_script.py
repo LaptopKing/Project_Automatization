@@ -22,8 +22,10 @@ new_string = new_string + "\n" + alias
 
 print(new_string)
 
+"""
 bash_new = open(os.path.expanduser("~/.bashrc"), "w")
 bash_new.write(new_string)
 bash_new.flush()
 bash_new.close()
 os.system("clear")
+"""
