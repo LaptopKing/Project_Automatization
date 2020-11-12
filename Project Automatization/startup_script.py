@@ -17,7 +17,7 @@ for g in range(len(bash_array)):
 
 new_string = ""
 for lines in bash_array:
-    new_string += lines
+    new_string += "\n" + lines
 
 
 print(new_string)
