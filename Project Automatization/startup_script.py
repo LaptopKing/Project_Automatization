@@ -3,32 +3,19 @@ import os
 with open(os.path.expanduser("~/.bashrc"), "r") as f:
     name = f.read()
     bash_array = name.splitlines()
+    f.close()
 
-# print(bash_array)
-# print(len(bash_array))
+alias = "alias make_project='var1=$(locate Sajt.sh);" + '"$var1"'
 
-g = 0
-minus_length = len(bash_array) - 2
+bash_new = open(os.path.expanduser("~/.bashrc"), "a+")
 
-alias = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.sh; cd -'"
-for g in range(len(bash_array)):
-    if (bash_array[g] != "# Custom aliases" and g >= minus_length):
-        bash_array.append("\n# Custom aliases")
-
-new_string = ""
+new_string = "\n# Custom aliases" + "\n" + alias
 for lines in bash_array:
-    new_string += "\n" + lines
+    if (lines == "# Custom aliases" or lines == alias):
+        pass
+    else:
+        bash_new.write(new_string)
 
-
-# print(new_string)
-new_string += "\n" + alias
-
-print(new_string)
-
-"""
-bash_new = open(os.path.expanduser("~/.bashrc"), "w")
-bash_new.write(new_string)
 bash_new.flush()
 bash_new.close()
 os.system("clear")
-"""
