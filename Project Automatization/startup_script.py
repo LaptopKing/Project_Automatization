@@ -1,12 +1,13 @@
 import os
-
+print("Hello World")
+"""
 with open(os.path.expanduser("~/.bashrc"), "r") as f:
     name = f.read()
     bash_array = name.splitlines()
 
 g = 0
 minus_length = len(bash_array) - 2
-"""
+
 alias = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.sh; cd -'"
 for g in range(len(bash_array)):
     if (bash_array[g] != "# Custom aliases" and g >= minus_length):
