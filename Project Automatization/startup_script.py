@@ -18,6 +18,8 @@ for g in range(len(bash_array)):
 new_string = ""
 for lines in bash_array:
     new_string = lines
+
+print(new_string)
 new_string = new_string + "\n" + alias
 
 print(new_string)
