@@ -25,3 +25,4 @@ bash_new.write(new_string)
 bash_new.flush()
 bash_new.close()
 os.system("clear")
+"""
