@@ -15,12 +15,12 @@ for g in range(len(bash_array)):
     if (bash_array[g] != "# Custom aliases" and g >= minus_length):
         bash_array.append("\n# Custom aliases")
 
-    print(bash_array[g])
-
 new_string = ""
 for lines in bash_array:
-    new_string = liness
+    new_string = lines
 new_string = new_string + "\n" + alias
+
+print(new_string)
 
 bash_new = open(os.path.expanduser("~/.bashrc"), "w")
 bash_new.write(new_string)
