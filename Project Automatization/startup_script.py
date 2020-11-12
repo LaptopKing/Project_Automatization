@@ -1,17 +1,26 @@
-bash = open (".bashrc", "r")
-bash_array = []
-i = 0
-for lines in bash.readlines():
-    bash_array[i] = lines
-    i += 1
+import os
 
-bash.close()
+with open(os.path.expanduser("~/.bashrc"), "r") as f:
+    name = f.read()
+    bash_array = name.splitlines()
 
-line2 = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.sh; cd -'"
-bash_array[(len(bash_array) + 1)] += "# Custom aliases"
-bash_array[(len(bash_array) + 2)] += line2
-bash_new = open("~/.bashrc", "w")
-bash_new.writelines(bash_array)
+g = 0
+minus_length = len(bash_array) - 2
+alias = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.sh; cd -'"
+for line in bash_array:
+    if (line != "# Custom aliases" and g >= minus_length):
+        bash_array.append("\n# Custom aliases")
+    elif (line != alias and g >= minus_length):
+        bash_array.append(alias)
+
+    g += 1
+
+new_string = ""
+for lines in bash_array:
+    new_string = lines
+
+bash_new = open(os.path.expanduser("~/.bashrc"), "w")
+bash_new.write(new_string)
 bash_new.flush()
 bash_new.close()
 os.system("clear")
