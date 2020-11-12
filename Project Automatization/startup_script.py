@@ -1,10 +1,10 @@
 import os
 print("Hello World")
-"""
+
 with open(os.path.expanduser("~/.bashrc"), "r") as f:
     name = f.read()
     bash_array = name.splitlines()
-
+"""
 g = 0
 minus_length = len(bash_array) - 2
 
