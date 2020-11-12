@@ -6,15 +6,15 @@ with open(os.path.expanduser("~/.bashrc"), "r") as f:
 
 g = 0
 minus_length = len(bash_array) - 2
+"""
 alias = "alias make_project='var1=$(locate Sajt.sh); cd" + "$var1" + "; ./Sajt.sh; cd -'"
-for line in bash_array:
-    if (line != "# Custom aliases" and g >= minus_length):
+for g in range(len(bash_array)):
+    if (bash_array[g] != "# Custom aliases" and g >= minus_length):
         bash_array.append("\n# Custom aliases")
-    elif (line != alias and g >= minus_length):
-        bash_array.append(alias)
+    elif (bash_array[g] != alias and g >= minus_length):
+        bash_array.append("\n" + alias)
 
-    print(g)
-    g += 1
+    print(bash_array[g])
 
 new_string = ""
 for lines in bash_array:
