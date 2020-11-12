@@ -15,7 +15,8 @@ for g in range(len(bash_array)):
     if (bash_array[g] != "# Custom aliases" and g >= minus_length):
         bash_array.append("\n# Custom aliases")
         g = 0
-    elif (bash_array[g] != alias and g >= minus_length):
+        minus_length2 = len(bash_array) - 1
+    elif (bash_array[g] != alias and g >= minus_length2):
         bash_array.append("\n" + alias)
     else:
         pass
