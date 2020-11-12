@@ -15,6 +15,7 @@ for lines in bash_array:
         pass
     else:
         bash_new.write(new_string)
+        break
 
 bash_new.flush()
 bash_new.close()
