@@ -13,6 +13,7 @@ for line in bash_array:
     elif (line != alias and g >= minus_length):
         bash_array.append(alias)
 
+    print(g)
     g += 1
 
 new_string = ""
