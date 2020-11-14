@@ -5,7 +5,7 @@ with open(os.path.expanduser("~/.bashrc"), "r") as f:
     bash_array = name.splitlines()
     f.close()
 
-alias = "alias make_project='var1=$(locate Sajt.sh);" + '"$var1"'
+alias = "alias make_project='var1=$(locate Sajt.sh);" + ' "$var1"' + "'" 
 
 bash_new = open(os.path.expanduser("~/.bashrc"), "a+")
 
