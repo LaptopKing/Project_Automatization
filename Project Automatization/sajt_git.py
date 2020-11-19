@@ -1,24 +1,13 @@
 import os
 from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
 class GitHub_and_Setup():
-    # Updating pip, the system and downloading necessary packages
-    @staticmethod
-    def pip():
-        print("\nEnter your password to update your system and install the required packages:")
-        os.system("sudo apt update")
-        os.system("sudo apt install python3 -y")
-        os.system("sudo apt install python3.7 -y")
-        os.system("sudo apt install python3-pip -y")
-        os.system("pip3 install selenium")
-        os.system("clear")
-
-
     # Open google and create new repository in GitHub
     @staticmethod
     def web():
+        from selenium import webdriver
+        from selenium.webdriver.common.keys import Keys
+        
         operadriver_path = os.popen('locate /Project_Automatization/Project\ Automatization/operadriver').read()
         operadriver_path = operadriver_path[:-1]
         os.system("chmod 777 " + '"' +  operadriver_path + '"')

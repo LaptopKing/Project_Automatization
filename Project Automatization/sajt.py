@@ -1,9 +1,7 @@
 import os
 import platform
-import pip
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from time import sleep
+import subprocess
 
 class project_folder_making:
 
@@ -22,11 +20,15 @@ class project_folder_making:
     @staticmethod
     def opening_system(folder_name):
         git_path = os.popen("locate sajt_git.py").read()
-        # git_path = git_path.replace("sajt_git.py", "")
+        git_path = git_path.replace("sajt_git.py", "")
+        try:
+            git_path = git_path.replace(" ", "\ ")
+        except:
+            pass
         print(git_path)
         os.system("code " + folder_name)
         os.system("gnome-open " + folder_name)
-        os.system("gnome-terminal --working-directory=" + folder_name + " -- /bin/sh -c 'var1=" + '"' + git_path + '"' + "; python3 " + '"$var1"' + "; exec bash'")
+        os.system("gnome-terminal --working-directory=" + folder_name + " -- /bin/sh -c cd " + git_path + "; python sajt_git.py; exec bash'")
 
 
     # Choosing the project type and environment
