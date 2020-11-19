@@ -28,7 +28,7 @@ class project_folder_making:
         print(git_path)
         os.system("code " + folder_name)
         os.system("gnome-open " + folder_name)
-        os.system("gnome-terminal --working-directory=" + folder_name + " -- /bin/sh -c cd " + git_path + "; python sajt_git.py; exec bash'")
+        os.system("gnome-terminal --working-directory=" + folder_name + " -- /bin/sh -c 'cd " + git_path + "; python sajt_git.py; exec bash'")
 
 
     # Choosing the project type and environment
